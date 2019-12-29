@@ -7,7 +7,7 @@ Author: Michael Bottom
 The yearly financial reports were scraped from internet financial databases. Once the data was collected, I calculated the aggregate or sum of the stats and created a column for that in MS Excel. Then I calculated a mean of the total stats and created a column for that also. The file was saved in csv format and imported into RStudio.
 
 ```javascript
-// Company analyzed and their tickers
+// Companies analyzed and their tickers
 
 AMZ (Amazon)
 WMT (Walmart)
