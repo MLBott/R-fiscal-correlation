@@ -26,7 +26,7 @@ It was also clear that Amazon, Walmart, and Target were the most correlated comp
 
 
 
-## File List
+## List of files contained in project
 
 ```
 Correlation-matrix-six-years.png
