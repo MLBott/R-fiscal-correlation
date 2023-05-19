@@ -1,14 +1,13 @@
-# Fiscal Correlation
+# Fiscal Correlation Analysis: Understanding Financial Trends in Retail Industry
 
-Author: Michael Bottom
+Created by: Michael Bottom
 
-## Summary:
+## Project Overview:
 
-The yearly financial reports were scraped from internet financial databases. Once the data was collected, I calculated the aggregate or sum of the stats and created a column for that in MS Excel. Then I calculated a mean of the total stats and created a column for that also. The file was saved in csv format and imported into RStudio.
+This project leverages data analysis to explore and understand the financial trends of five key players in the retail industry over a period of six years (2012-2017). The primary objective is to analyze various fiscal aspects, including sales growth, liabilities increment, and correlations between different companies, to comprehend how these factors interplay over time.
 
+The companies analyzed include:
 ```javascript
-// Companies analyzed and their tickers
-
 AMZ (Amazon)
 WMT (Walmart)
 TGT (Target)
@@ -16,21 +15,31 @@ COST (Costco)
 BBY (Best Buy)
 ```
 
+## Data Collection & Processing:
 
-In RStudio I verified the calculations of the means column in the financial stats, for data quality checking. I transposed the data, switching the x and y axis. I needed the stock name as column names. AMZN1 through AMZN6 refer to the Amazon financial stats for years 2012 through 2017. Similarly for WMT(1-6) for Walmart, TGT(1-6) for Target, BBY(1-6) for Best Buy, and COST(1-6) for Costco. I performed data reduction by removing the column that contained the names of the financial stats using the NULL keyword because it was not numerical data. I performed some test plotting and correlation checking. Then I ran a normalization function on the data. I assigned the data frame to a variable, and then plotted another correlation matrix.
+Financial reports for these retailers were scraped from online databases, followed by calculations of aggregate stats and their mean for each company per year. The resulting data was stored in a CSV format and imported into RStudio for further analysis.
 
-Looking at the correlation matrix, it was useful to compare one year of a stock of with its correlation to other years of the same stock. For example, comparing COST1 (Costco 2012) to the other Costco years showed it was markedly different from the other years (.9973822 correlation with 2017). 2012 was the year that Costco’s sales increased the most compared to the other years. Looking at BBY2 (Best Buy 2013) also showed a noticeable difference in correlation with the other Best Buy years (.9971878 correlation with 2016). That is the year that Best Buy’s sales dropped the most compared to the other years.
-The correlation matrix also showed that in 2017 both Amazon and Costco had lower correlation with the mean, (.9510914 correlation with the mean) (.9907068 correlation with the mean) respectively, than the other companies. And it matches up with both companies having the two largest increases in their liabilities of the group that year. 
+## Methodology & Insights:
 
-It was also clear that Amazon, Walmart, and Target were the most correlated companies to each other out of the group of five online retailers when comparing intergroup correlation.  Overall the correlation matrix was mostly useful here for comparing a company to itself over time and looking for changes in the correlations. Additionally, it was also useful for looking at the companies’ correlation with the group mean. It did not turn out to be useful for tracking stock value volatility in correlation to financial stats because yearly quarterly reports do not have the granularity needed that quarterly reports would have provided. Also, not being able to retrieve the 52-week high and 52-week low stats of the companies’ stocks from the deprecated Google or Yahoo Finance APIs meant that it was necessary to use sales per share instead, which was not as useful for measuring stock value volatility.
+In RStudio, the data was cross-verified, transposed, and normalized to make it conducive for statistical analysis. The correlation matrix was primarily used to investigate changes over time within each company and to understand how these companies performed relative to the group mean.
 
+Some key insights derived from the analysis are:
+- There is a marked difference in the financial performance of Costco and Best Buy in 2012 and 2013 respectively when compared to other years.
+- Amazon and Costco demonstrated a lower correlation with the group mean in 2017, correlating with the significant increase in their liabilities that year.
+- Inter-group correlation analysis revealed that Amazon, Walmart, and Target were the most correlated companies among the five studied.
 
+## Limitations & Future Scope:
 
-## List of files contained in project
+While the analysis provided useful insights into the fiscal behavior of the studied companies, it was limited in tracking stock value volatility due to the lack of granularity in yearly reports and unavailability of 52-week high/low stats for the companies' stocks.
 
-```
-Correlation-matrix-six-years.png
-Correlation-matrix-six-years.jpg
-Online-retailers-fiscal-six-years.csv
-Online-retailers.R
-README.md
+This project would benefit from future work that incorporates more granular quarterly reports and accesses broader market data, such as stock value volatility, for a more comprehensive understanding of fiscal trends.
+
+## Repository Contents:
+
+- `Correlation-matrix-six-years.png`: Visual representation of the correlation matrix.
+- `Correlation-matrix-six-years.jpg`: Alternate visual representation of the correlation matrix.
+- `Online-retailers-fiscal-six-years.csv`: Raw data used for the analysis.
+- `Online-retailers.R`: R script used for data processing and analysis.
+- `README.md`: Project overview and summary document.
+
+Your feedback, questions, and contributions are most welcome!
